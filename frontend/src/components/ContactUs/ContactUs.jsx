@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 
 const ContactUs = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
-    <div className="bg-gray-100 py-12 px-4 md:px-10 lg:px-20">
+    <div className="bg-gray-100 py-12 px-4 md:px-10 lg:px-20" data-aos="fade-up">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
+        <h2
+          className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10"
+          data-aos="zoom-in"
+        >
           Contact <span className="text-indigo-600">Us</span>
         </h2>
 
         {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Contact Info */}
-          <div className="space-y-6">
+          <div className="space-y-6" data-aos="fade-right">
             <div className="flex items-center gap-4">
               <FiMail size={24} className="text-indigo-600" />
               <div>
@@ -40,7 +49,10 @@ const ContactUs = () => {
           </div>
 
           {/* Contact Form */}
-          <form className="bg-white rounded-xl shadow-md p-6 space-y-4">
+          <form
+            className="bg-white rounded-xl shadow-md p-6 space-y-4"
+            data-aos="fade-left"
+          >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 type="text"

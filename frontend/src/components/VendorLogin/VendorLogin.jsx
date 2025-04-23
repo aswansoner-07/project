@@ -87,6 +87,10 @@ const VendorLogin = () => {
             Register
           </Link>
         </p>
+        <p className="text-center text-sm text-blue-500 mt-2">
+
+        <Link to='/forget-password' className='text-center'>Forget Password</Link>
+        </p>
       </div>
     </div>
   );

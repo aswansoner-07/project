@@ -10,6 +10,8 @@ import AddToCart from '../components/AddToCart/AddToCart'
 import VendorRegister from '../components/VendorRegister/VendorRegister'
 import AddProduct from '../AddProduct'
 import Dashboard from '../components/Dashboard/Dashboard'
+import ForgotPassword from '../components/VendorLogin/ForgetPassword'
+import ResetPassword from '../components/VendorLogin/ResetPassword'
 
 const Index = () => {
   return (
@@ -26,6 +28,8 @@ const Index = () => {
             <Route path="/vendor-register" element={<VendorRegister/>} />               
             <Route path="/add-product" element={<AddProduct/>} />               
             <Route path="/dashboard" element={<Dashboard/>} />               
+            <Route path="/forget-password" element={<ForgotPassword/>} />               
+            <Route path="/reset-password" element={<ResetPassword/>} />               
         </Routes>    
     </>
   )

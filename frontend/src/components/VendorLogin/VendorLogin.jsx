@@ -24,8 +24,10 @@ const VendorLogin = () => {
         const { role } = data.user;
 
         if (role === 'vendor') {
+          alert('Login successful!');
           navigate('/dashboard');
         } else if (role === 'user') {
+          alert('Login successful!');
           navigate('/');
         } else {
           alert("Unknown role");

@@ -35,16 +35,6 @@ export default function ResetPassword() {
     <div className="max-w-md mx-auto mt-10 p-4 min-h-screen rounded">
       <h2 className="text-xl font-bold mb-4">Reset Password</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
-        {!token && (
-          <input
-            type="text"
-            placeholder="Enter token"
-            className="w-full p-2 border rounded"
-            value={token}
-            onChange={(e) => setToken(e.target.value)}
-            required
-          />
-        )}
         <input
           type="password"
           placeholder="New Password"

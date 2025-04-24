@@ -24,6 +24,21 @@ const ProductInner = () => {
     fetchProducts();
   }, []);
 
+  const handleAddToCart = async (productId) => {
+    try{
+        const userId = localStorage.getItem('userId'); // Assuming you have the user ID stored in local storage
+        await axios.post('http://localhost:8001/cart/add', {
+          userId, 
+          productId
+        });
+        alert('Product added to cart successfully!');
+    }
+    catch(err){
+      console.error('Error adding product to cart:', err);
+      alert('Error adding product to cart. Please try again later.');
+    }
+  }
+
   const product = products.find((prod) => prod._id === productId);
 
   if (loading) return <div className="text-center py-10">Loading...</div>;
@@ -40,8 +55,8 @@ const ProductInner = () => {
       <p className="text-yellow-400 text-center mt-2">Rating: {product.rating}</p>
       <div className="flex justify-center mt-4">
         <button
-        // onClick={}
-         className="bg-blue-500 text-white px-4 py-2 rounded">Add to Cart</button>
+        onClick={()=>handleAddToCart(product._id)}
+         className="bg-blue-500 text-white px-4 py-2 cursor-pointer rounded">Add to Cart</button>
         <button className="bg-green-500 text-white px-4 py-2 rounded ml-4">Buy Now</button>
       </div>
     </div>
